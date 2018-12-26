@@ -4,9 +4,9 @@ import subprocess
 
 
 #cnx = connection.MySQLConnection(user=os.environ['DBUSERNAME'], 
-                                 password=os.environ['DBPASSWORD'],
-                                 host=os.environ['DBHOST'],
-                                 database=os.environ['DBNAME'])
+#                                 password=os.environ['DBPASSWORD'],
+#                                 host=os.environ['DBHOST'],
+#                                 database=os.environ['DBNAME'])
 
 
 print os.environ['NAME']
