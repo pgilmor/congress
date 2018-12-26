@@ -30,8 +30,6 @@ print "Init"
 subprocess.call(init, shell=True)
 print "Config"
 subprocess.call(config, shell=True)
-print "Pull"
-subprocess.call(pull, shell=True)
 print "Govinfo"
 #subprocess.call(govinfo, shell=True)
 print "Bills"
@@ -40,6 +38,8 @@ print "Votes"
 #subprocess.call(votes, shell=True)
 print "Add"
 subprocess.call(add, shell=True)
+print "Pull"
+subprocess.call(pull, shell=True)
 print "Commit"
 subprocess.call(commit, shell=True)
 print "Push"
