@@ -8,7 +8,6 @@ import subprocess
 #                                 host=os.environ['DBHOST'],
 #                                 database=os.environ['DBNAME'])
 
-
 print os.environ['NAME']
 name = os.environ['NAME']
 email = os.environ['EMAIL']
@@ -16,23 +15,32 @@ githubUser = os.environ['USERNAME']
 token = os.environ['TOKEN']
 
 init = "git init"
-gitBashCommand = "git config user.name {} | git config user.email {} | git config github.user {} | git config github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
-govinfoBashCommand = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
-govinfo = govinfoBashCommand.split(" ")
-billsBashCommand = "./run bills --congress=115 --debug"
-bills = billsBashCommand.split(" ")
-votesBashCommand = "./run votes --congress=115 session=2018 --force --debug"
-votes = votesBashCommand.split(" ")
+config = "git config user.name {} | git config user.email {} | git config github.user {} | git config github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
+govinfo = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
+bills = "./run bills --congress=115 --debug"
+votes = "./run votes --congress=115 --session=2018 --force --debug"
 commitBashCommand ="git add . | git commit -m 'Update' | git push heroku master"
-commit = commitBashCommand.split(" ")
+add = "git add ."
+commit = "git commit -m 'Update'"
+push = "git push heroku master"
 
 os.chdir('/app/')
+print "Init"
 subprocess.call(init, shell=True)
-subprocess.call(gitBashCommand, shell=True)
-#subprocess.call(govinfo)
-subprocess.call(bills)
-subprocess.call(votesBashCommand, shell=True)
-subprocess.call(commitBashCommand, shell=True)
+print "Config"
+subprocess.call(config, shell=True)
+print "Govinfo"
+#subprocess.call(govinfo, shell=True)
+print "Bills"
+subprocess.call(bills, shell=True)
+print "Votes"
+subprocess.call(votes, shell=True)
+print "Add"
+subprocess.call(add, shell=True)
+print "Commit"
+subprocess.call(commit, shell=True)
+print "Push"
+subprocess.call(push, shell=True)
 
 
 #cnx.close()
