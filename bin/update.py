@@ -1,13 +1,12 @@
 import os
 import subprocess
 import mysql.connector
-from mysql.connector import errorcode
 
 try:
   cnx = connection.MySQLConnection(user=os.environ['DBUSERNAME'], 
                                  password=os.environ['DBPASSWORD'],
                                  host=os.environ['DBHOST'],
-                                 database=os.environ['DBNAME']
+                                 database=os.environ['DBNAME'])
 except mysql.connector.Error as err:
   if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
     print("Something is wrong with your user name or password")
