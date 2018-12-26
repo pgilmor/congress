@@ -15,15 +15,15 @@ githubUser = os.environ['USERNAME']
 token = os.environ['TOKEN']
 
 init = "git init"
-config = "git config --global user.name {} | git config --global user.email {} | git config --global github.user {} | git config --global github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
+config = "git config --global user.name {} | git config --global user.email {} | git config --global github.user {} | git config --global github.token {} | git remote add heroku https://github.com/pgilmor/ctg-update.git".format(name, email, githubUser, token)
 pull = "git pull heroku master"
 govinfo = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
 bills = "./run bills --congress=115 --debug"
 votes = "./run votes --congress=115 --session=2018 --force --debug"
-commitBashCommand ="git add . | git commit -m 'Update' | git push heroku master"
+commitBashCommand ="git add data | git commit -m 'Update' | git push heroku master"
 add = "git add ."
 commit = "git commit -m 'Update'"
-push = "git push heroku master"
+push = "git push heroku master -ff"
 
 os.chdir('/app/')
 print "Init"
