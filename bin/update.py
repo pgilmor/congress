@@ -4,7 +4,7 @@ import mysql.connector
 from mysql.connector import errorcode
 
 try:
-cnx = connection.MySQLConnection(user=os.environ['DBUSERNAME'], 
+  cnx = connection.MySQLConnection(user=os.environ['DBUSERNAME'], 
                                  password=os.environ['DBPASSWORD'],
                                  host=os.environ['DBHOST'],
                                  database=os.environ['DBNAME')
