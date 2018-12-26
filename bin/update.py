@@ -15,7 +15,7 @@ email = os.environ['EMAIL']
 githubUser = os.environ['USERNAME']
 token = os.environ['TOKEN']
 
-gitBashCommand = "git init | git config user.name {} | git config user.email {} | git config github.user {} | git config github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
+gitBashCommand = "cd | git init | git config user.name {} | git config user.email {} | git config github.user {} | git config github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
 govinfoBashCommand = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
 govinfo = govinfoBashCommand.split(" ")
 billsBashCommand = "./run bills --congress=115 --debug"
@@ -29,7 +29,7 @@ subprocess.Popen(gitBashCommand, shell=True, cwd="/")
 #subprocess.call(govinfo)
 #subprocess.call(bills)
 subprocess.Popen(votes, cwd="/")
-subprocess.call(commitBashCommand, shell=True, cwd="/")
+subprocess.Popen(commitBashCommand, shell=True, cwd="/")
 
 
 #cnx.close()
