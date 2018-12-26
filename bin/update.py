@@ -13,9 +13,10 @@ name = os.environ['NAME']
 email = os.environ['EMAIL']
 githubUser = os.environ['USERNAME']
 token = os.environ['TOKEN']
+repo = os.environ['REPO']
 
 init = "git init"
-config = "git config --global user.name {} | git config --global user.email {} | git config --global github.user {} | git config --global github.token {} | git remote add heroku git@github.com:pgilmor/ctg-data.git".format(name, email, githubUser, token)
+config = "git config --global user.name {} | git config --global user.email {} | git config --global github.user {} | git config --global github.token {} | git remote add heroku {}".format(name, email, githubUser, token, repo)
 pull = "git pull heroku master"
 govinfo = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
 bills = "./run bills --congress=115 --debug"
