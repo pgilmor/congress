@@ -21,4 +21,4 @@ votes = votesBashCommand.split(" ")
 # subprocess.call(bills)
 # subprocess.call(votes)
 
- cnx.close()
+cnx.close()
