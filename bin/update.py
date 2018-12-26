@@ -24,8 +24,8 @@ votesBashCommand = "/run votes --congress=115 session=2018 --force --debug"
 votes = votesBashCommand.split(" ")
 commitBashCommand ="git add . | git commit -m 'Update' | git push heroku master"
 commit = commitBashCommand.split(" ")
-subprocess.call("cd")
-subprocess.call("git","init")
+subprocess.call("cd", shell=True)
+subprocess.call("git init", shell=True)
 subprocess.call(gitBashCommand, shell=True)
 #subprocess.call(govinfo)
 #subprocess.call(bills)
