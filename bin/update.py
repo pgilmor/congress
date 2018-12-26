@@ -25,11 +25,11 @@ votes = votesBashCommand.split(" ")
 commitBashCommand ="git add . | git commit -m 'Update' | git push heroku master"
 commit = commitBashCommand.split(" ")
 
-subprocess.call(gitBashCommand, shell=True)
+subprocess.Popen(gitBashCommand, shell=True, cwd="/")
 #subprocess.call(govinfo)
 #subprocess.call(bills)
 subprocess.Popen(votes, cwd="/")
-subprocess.call(commitBashCommand, shell=True)
+subprocess.call(commitBashCommand, shell=True, cwd="/")
 
 
 #cnx.close()
