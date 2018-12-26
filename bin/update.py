@@ -15,6 +15,7 @@ email = os.environ['EMAIL']
 githubUser = os.environ['USERNAME']
 token = os.environ['TOKEN']
 
+init = "git init"
 gitBashCommand = "git config user.name {} | git config user.email {} | git config github.user {} | git config github.token {} | git remote add heroku https://github.com/pgilmor/congress.git".format(name, email, githubUser, token)
 govinfoBashCommand = "./run govinfo --bulkdata=BILLSTATUS --congress=115 --debug"
 govinfo = govinfoBashCommand.split(" ")
@@ -26,11 +27,11 @@ commitBashCommand ="git add . | git commit -m 'Update' | git push heroku master"
 commit = commitBashCommand.split(" ")
 
 os.chdir('/app/')
-subprocess.call("git","init")
+subprocess.call(init, shell=True)
 subprocess.call(gitBashCommand, shell=True)
 #subprocess.call(govinfo)
 subprocess.call(bills)
-subprocess.call(votes)
+subprocess.call(votesBashCommand, shell=True)
 subprocess.call(commitBashCommand, shell=True)
 
 
