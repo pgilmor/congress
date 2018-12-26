@@ -38,8 +38,6 @@ print "Votes"
 #subprocess.call(votes, shell=True)
 print "Add"
 subprocess.call(add, shell=True)
-print "Pull"
-subprocess.call(pull, shell=True)
 print "Commit"
 subprocess.call(commit, shell=True)
 print "Push"
