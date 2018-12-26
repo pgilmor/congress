@@ -19,7 +19,7 @@ repo = os.environ['REPO']
 init = "git init"
 config = "git config --global user.name {} | git config --global user.email {} | git config --global github.user {} | git config --global github.token {} | git remote add heroku {}".format(name, email, githubUser, token, repo)
 pull = "git pull heroku master"
-govinfo = "./run govinfo --bulkdata=BILLSTATUS --congress=115"
+govinfo = './run govinfo --filter="(/s/|/hr/)" --bulkdata=BILLSTATUS --congress=115'
 bills = "./run bills --congress=115"
 votes = "./run votes --congress=115 --session=2018 --force"
 add = "git add data"
