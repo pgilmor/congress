@@ -23,6 +23,8 @@ billsBashCommand = "./run bills --congress=115 --debug"
 bills = billsBashCommand.split(" ")
 votesBashCommand = "/run votes --congress=115 session=2018 --force --debug"
 votes = votesBashCommand.split(" ")
+commitBashCommand ="git add . && git commit -m 'Update' && git push heroku master"
+commit = commitBashCommand.split(" ")
 
 subprocess.call(git)
 #subprocess.call("git","config", "user.name", os.environ['NAME'])
@@ -31,9 +33,9 @@ subprocess.call(git)
 #subprocess.call("git","config", "github.token", os.environ['GITHUB'])
 #subprocess.call("git","remote","add","https://github.com/pgilmor/congress.git")
 #subprocess.call(govinfo)
-#subprocess.call(bills)
+subprocess.call(bills)
 #subprocess.call(votes)
-#subprocess.call("git","add",".")
+subprocess.call(commit)
 #subprocess.call("git","commit","-m","'data update'")
 #subprocess.call("git","push","heroku","master")
 
